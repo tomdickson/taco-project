@@ -1,5 +1,5 @@
 
-**Teaching**
-**And**
+**T** eaching
+**A** nd
 **Creating**
 **Outdoors**
