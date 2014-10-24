@@ -1,5 +1,5 @@
 
-T - Teaching
-A - And
-C - Creating
-O - Outdoors
+**T**eaching
+**A**nd
+**C**reating
+**O**utdoors
