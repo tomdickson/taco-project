@@ -1,5 +1,8 @@
 
 **T** eaching
+
 **A** nd
-**Creating**
-**Outdoors**
+
+**C** reating
+
+**O** utdoors
