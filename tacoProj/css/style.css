@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* CSS Document */
+@import url("bootstrap.min.css");
+@import url("bootstrap-theme.min.css");
+html, body, #map-canvas {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+#loc {
+    width: 20%;
+}
+.slider {
+    width: 30%;
+    float:right;
+}
