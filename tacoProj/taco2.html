@@ -6,20 +6,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-    
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-    </style>
+
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
       var map;
       var pos;
       var infowindow;
+      var markers = [];
       function initialize() {
         map = new google.maps.Map(document.getElementById('map-canvas'), {
           zoom: 5,
@@ -48,6 +42,35 @@
           handleNoGeolocation(false);
         }
       }
+      function callback(results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+        markers.push(marker);
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+      // Sets the map on all markers in the array.
+      function setAllMap(map) {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(map);
+        }
+      };
+      // Removes the markers from the map, but keeps them in the array.
+      function clearMarkers() {
+        setAllMap(null);
+      };
       function findFood(pos) {
         var request = {
           location: pos,
@@ -58,11 +81,11 @@
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request, callback);
       };
-      function findHotel(pos) {
+      function findMovie(pos) {
         var request = {
           location: pos,
           radius: 500,
-          types: ['lodging']
+          types: ['movie_theater']
         };
         infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
@@ -78,24 +101,6 @@
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request, callback);
       };
-      function callback(results, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-          }
-        }
-      }
-      function createMarker(place) {
-        var placeLoc = place.geometry.location;
-        var marker = new google.maps.Marker({
-          map: map,
-          position: place.geometry.location
-        });
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name);
-          infowindow.open(map, this);
-        });
-      }
       function handleNoGeolocation(errorFlag) {
         if (errorFlag) {
           var content = 'Oh man, we lost you.';
@@ -105,7 +110,7 @@
         // Get lost in SF
         var options = {
           map: map,
-          position: new google.maps.LatLng(37.8, -122.4),
+          position: new google.maps.LatLng(37.8,-122.4),
           content: content
         };
         var infowindow = new google.maps.InfoWindow(options);
@@ -117,27 +122,58 @@
           setLocation();
         });
         $("#food").click(function () {
+          clearMarkers();
           findFood(pos);
         });
-        $("#hotel").click(function () {
-          findHotel(pos);
+        $("#movie").click(function () {
+          clearMarkers();
+          findMovie(pos);
         });
-        $("#store").click(function () {
-          findStore(pos);
+        $("#shop").click(function () {
+          clearMarkers();
+          findShop(pos);
+        });
+        $("#gallery").click(function () {
+          clearMarkers();
+          findGallery(pos);
+        });
+        $("#amuse").click(function () {
+          clearMarkers();
+          findAmuse(pos);
+        });
+        $("#club").click(function () {
+          clearMarkers();
+          findClub(pos);
         });
       });
     </script>
   </head>
   <body>
-    <div data-role="header" data-position="fixed">
-         <h1>Taco Trek</h1>
-    <dibv>     
-        <button id="locate">Find me!</button>
+    <div data-role="header" data-position="fixed" class="row ">
+         <h1 class="col-sm-12">Taco Trek</h1>
+         <button id="locate" class="col-sm-12">Find me!</button>    
+      <div id="screen1" class="col-sm-12">
+          <h2>Whatcha wanna do?<h2>
         <button id="food">Find Food!</button>
-        <button id="hotel">Find Hotels!</button>
-        <button id="store">Find Stores!</button>
-
-    </div>
-    <div id="map-canvas"></div>
+        <button id="fun">Find Fun!</button>
+      </div>
+      <div id="screen2a" class="row">   
+        <button id="mexi">Mexi</button>
+        <button id="mexi">Mexi</button>
+        <button id="mexi">Mexi</button>
+        <button id="mexi">Mexi</button>
+        <button id="mexi">Mexi</button>
+        <button id="mexi">Mexi</button>
+      </div><!--end screen2a-->
+      <div id="screen2b" class="row">
+        <button id="movie">Movies</button>
+        <button id="store">Stores</button>
+        <button id="gallery">Galleries</button>
+        <button id="amuse">Amusements</button>
+        <button id="club">Night Club</button>
+      </div><!--end screen2b-->  
+    </div><!--end header-->
+    <div id="map-canvas" class="col-sm-12"></div>
+    <button id="locate" class="col-sm-6">Find me!</button>
   </body>
 </html>

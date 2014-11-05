@@ -1,10 +1,9 @@
 @charset "UTF-8";
 /* CSS Document */
-@import url("bootstrap.min.css");
 @import url("bootstrap-theme.min.css");
 html, body, #map-canvas {
     height: 100%;
-    width: 100%;
+    width:auto;
     margin: 0px;
     padding: 0px;
 }
@@ -14,4 +13,22 @@ html, body, #map-canvas {
 .slider {
     width: 30%;
     float:right;
+}
+.col1 {
+	background-color:red;
+}
+.col2 {
+	background-color:green;
+}
+.col3 {
+	background-color:blue;
+}
+.col4 {
+	background-color:orange;
+}
+.col5 {
+	background-color:pink;
+}
+.col6 {
+	background-color:magenta;
 }
