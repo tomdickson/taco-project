@@ -1,4 +1,3 @@
-<script>
 var map;
 var pos;
 var infowindow;
@@ -150,6 +149,14 @@ $(document).ready(function () {
   $("#locate").click(function () {
     setLocation();
   });
+  $("#food").click(function(){
+    $(".headerB").removeClass("hidden");
+    $(".headerC").addClass("hidden");
+  });
+   $("#fun").click(function(){
+    $(".headerC").removeClass("hidden");
+    $(".headerB").addClass("hidden");
+  });
   $("#food").click(function () {
     clearMarkers();
     findFood(pos);
@@ -179,4 +186,3 @@ $(document).ready(function () {
     findPark(pos);
   });
 });
-</script>
