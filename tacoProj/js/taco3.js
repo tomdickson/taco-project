@@ -59,11 +59,67 @@ function setAllMap(map) {
 function clearMarkers() {
   setAllMap(null);
 };
-function findFood(pos) {
+function findFoodLatin(pos) {
   var request = {
     location: pos,
     radius: 500,
-    types: ['food']
+    types: ['food'],
+    keyword:['mexican']
+  };
+  infowindow = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+};
+function findFoodAsian(pos) {
+  var request = {
+    location: pos,
+    radius: 500,
+    types: ['food'],
+    keyword:['chinese']
+  };
+  infowindow = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+};
+function findFoodItal(pos) {
+  var request = {
+    location: pos,
+    radius: 500,
+    types: ['food'],
+    keyword:['italian']
+  };
+  infowindow = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+};
+function findFooDeli(pos) {
+  var request = {
+    location: pos,
+    radius: 500,
+    types: ['food'],
+    keyword:['deli']
+  };
+  infowindow = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+};
+function findFoodBbq(pos) {
+  var request = {
+    location: pos,
+    radius: 500,
+    types: ['food'],
+    keyword:['bbq']
+  };
+  infowindow = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+};
+function findFoodVeggie(pos) {
+  var request = {
+    location: pos,
+    radius: 500,
+    types: ['food'],
+    keyword:['vegetarian']
   };
   infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
@@ -151,15 +207,37 @@ $(document).ready(function () {
   });
   $("#food").click(function(){
     $(".headerB").removeClass("hidden");
+    $("#sliders").removeClass("hidden");
     $(".headerC").addClass("hidden");
   });
    $("#fun").click(function(){
     $(".headerC").removeClass("hidden");
+    $("#sliders").removeClass("hidden");
     $(".headerB").addClass("hidden");
   });
-  $("#food").click(function () {
+  $("#foodLatin").click(function () {
     clearMarkers();
-    findFood(pos);
+    findFoodLatin(pos);
+  });
+  $("#foodAsian").click(function () {
+    clearMarkers();
+    findFoodAsian(pos);
+  });
+  $("#foodItal").click(function () {
+    clearMarkers();
+    findFoodItal(pos);
+  });
+  $("#fooDeli").click(function () {
+    clearMarkers();
+    findFooDeli(pos);
+  });
+  $("#foodBbq").click(function () {
+    clearMarkers();
+    findFoodBbq(pos);
+  });
+  $("#foodVeggie").click(function () {
+    clearMarkers();
+    findFoodVeggie(pos);
   });
   $("#theatre").click(function () {
     clearMarkers();
@@ -185,4 +263,5 @@ $(document).ready(function () {
     clearMarkers();
     findPark(pos);
   });
+  
 });

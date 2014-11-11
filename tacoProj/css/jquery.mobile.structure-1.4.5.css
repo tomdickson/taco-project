@@ -392,7 +392,7 @@ button.ui-btn,
 button.ui-btn-inline,
 .ui-header button.ui-btn,
 .ui-footer button.ui-btn {
-	width: 49.66%;
+	width: auto;
 }
 /* Firefox adds a 1px border in a button element. We negate this to make sure they have the same height as other buttons in controlgroups. */
 button.ui-btn::-moz-focus-inner {

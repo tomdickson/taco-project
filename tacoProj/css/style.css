@@ -15,10 +15,9 @@ body {
 }
 
 #map-canvas {
-	height: 1200px;
-    width:1200px;
+	height: 600px;
+    width:100%;
 }
-.headerA, .headerB, .headerC { margin-left:.5%; }
 
 .hidden {display:none;}
 
@@ -29,3 +28,12 @@ body {
     width: 30%;
     float:right;
 }
+.gm-style {
+	color:#92d738;
+}
+
+button#getMap,button#goBack {
+	width:100%;
+	margin:0, 1%;
+}
+
