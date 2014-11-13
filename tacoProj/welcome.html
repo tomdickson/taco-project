@@ -8,20 +8,19 @@
     <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src="js/taco3.js"></script>
+    <script src="js/taco3a.js"></script>
     <link rel="stylesheet" href="css/tacoTrek.css">
     <link rel="stylesheet" href="css/style.css">
 
   </head>
   <body>
-    <div data-role="page" id="one">
+    <div data-role="" class="one">
       <div data-role="header" data-position="fluid">
            <h1>Taco Trek</h1>
-          <button id="locate">Find me!</button>
       </div>
       <div data-role="content" class="headerA ui-grid-a">
             <button id="food" class="ui-btn-inline ui-corner-all ui-block-a">Food</button>
-            <button id="fun" class="ui-btn-inline ui-corner-all ui-block-b" >Fun</button>
+            <button id="fun" class="ui-btn-inline ui-corner-all ui-block-b">Fun</button>
       </div>
       <div>
           <div data-role="content" class="headerB hidden">
@@ -31,7 +30,7 @@
 	        </div>
 	        <div class="ui-grid-a">
 	            <button id="foodItal" class="ui-btn ui-corner-all ui-block-a food">Italian</button>
-	            <button id="fooDeli" class="ui-btn ui-corner-all ui-block-b food">Deli</button>
+	            <button id="foodDeli" class="ui-btn ui-corner-all ui-block-b food">Deli</button>
 			</div>
 			<div class="ui-grid-a">
 	            <button id="foodBbq" class="ui-btn ui-corner-all ui-block-a food">BBQ</button>
@@ -60,14 +59,15 @@
 	          
 	          <input id="slider-cost" type="range" min="1" max="100" value="50" class="slider ">Cost:&nbsp;$>$$$</input>
 	      </form>
-	      <button id="getMap" class="ui-icon-back ui-btn-icon-left ui-corner-all" >Get Trek!</button>
+	      <button id="path" class="ui-icon-back ui-btn-icon-left ui-corner-all">Get Trek!</button>
 	  </div>
-
+	</div><!--/page -->
+    <div data-role="" id="two">  
       <div id="mapWindow" class="mapWindow">      
 	      <div id="map-canvas" data-role="" class="window"></div>
 	      
 	      <div data-role="footer" class="">
-			  <button id="goBack" class="ui-icon-back ui-btn-icon-left ui-corner-all" >Go Back</button>	      
+			  <button id="goBack" class="ui-icon-back ui-btn-icon-left ui-corner-all">Go Back</button>	      
 	      </div>
 	  <div>
     </div><!--/page -->
