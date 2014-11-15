@@ -25,7 +25,7 @@ button,
 .ui-btn {
 	font-size: 1.2em;
 	line-height: 1.5;
-	   font-family: 'Alegreya Sans SC', sans-serif /*{global-font-family}*/;
+	font-family: 'Alegreya Sans SC', sans-serif /*{global-font-family}*/;
 }
 legend,
 .ui-input-text input,

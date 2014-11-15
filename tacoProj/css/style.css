@@ -36,4 +36,29 @@ button#getMap,button#goBack {
 	width:100%;
 	margin:0, 1%;
 }
+#introInfo {
+	height: 35em;
+	margin-top:1.65em;
+}
+.blurb {
+	margin-top:-1em;
+	margin-left: 5%;
+	max-width: 85%;
+	float:left;
+	color:#ee9640;
+	text-shadow: 3px 3px #421312;
+	font-size: 2.05em;
+	font-variant:"ExtraBold Italic";	
+}
+.imgResp {
+	width:90%;
+	height:inherit;
+}
+#mrTaco{
+	background:url("images/taco002.png")center top no-repeat;
+	margin-left:5%;
+	width:90%;
+	height:inherit;
+	float:left;
+}
 

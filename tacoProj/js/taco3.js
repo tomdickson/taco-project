@@ -1,17 +1,20 @@
 var map;
 var pos;
+var transport;
+var duration;
+var cost;
 var infowindow;
 var markers = [];
 var latarray = [];
 var directionsDisplay;
 var directionsService;
-var map;
 
 function setLocation() {
   directionsDisplay = new google.maps.DirectionsRenderer();
   directionsService = new google.maps.DirectionsService();
   map = new google.maps.Map(document.getElementById('map-canvas'),{
     scrollwheel: false,
+    draggable: false
   });
 
   directionsDisplay.setMap(map);
@@ -97,7 +100,7 @@ function calcRoute(markers, pos) {
   // var start = pos;
   // var end = latarray[latarray.length-1];
   var start = new google.maps.LatLng(pos.k, pos.B);
-  var end = new google.maps.LatLng(37.7749295,-122.4194);
+  var end = new google.maps.LatLng(37.7947919,-122.4036835);
   var request = {
       origin:start,
       destination:end,
@@ -137,11 +140,13 @@ $(document).ready(function () {
     $(".headerB").removeClass("hidden");
     $("#sliders").removeClass("hidden");
     $(".headerC").addClass("hidden");
+    $("#introInfo").addClass("hidden");
   });
   $("#fun").click(function(){
     $(".headerC").removeClass("hidden");
     $("#sliders").removeClass("hidden");
     $(".headerB").addClass("hidden");
+    $("#introInfo").addClass("hidden");
   });
   $("#foodLatin").click(function () {
     find(['food'], ['mexican'], 500, pos);
@@ -179,6 +184,23 @@ $(document).ready(function () {
   $("#park").click(function () {
     find(['park'], undefined, 500, pos);
   });
+
+   ///////// SLIDERS /////////////
+  $("#slider-time").change(function() {
+      duration = document.getElementById("slider-time").value;
+      console.log(duration);
+    }
+  );
+  $("#slider-cost").change(function() {
+      cost = document.getElementById("slider-cost").value;
+      console.log(cost);
+    }
+  );
+  $("#slider-transport").change(function() {
+      transport = document.getElementById("slider-transport").value;
+      console.log(transport);
+    }
+  );
   $("#path").click(function () {
     calcRoute(markers, pos);
     $("#sliders").addClass("hidden");
@@ -187,7 +209,7 @@ $(document).ready(function () {
     $(".headerA").addClass("hidden");  
   });
   $("#goBack").click(function () {
-    $(".headerA").removeClass("hidden");  
+    location.reload();  
   });
 
 });
