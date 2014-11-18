@@ -22,12 +22,7 @@
             <button id="food" class="ui-btn-inline ui-corner-all ui-block-a">Food</button>
             <button id="fun" class="ui-btn-inline ui-corner-all ui-block-b">Fun</button>
       </div>
-      <div id="introInfo" data-role="content" class="ui-grid-a">
-      	  <h3 class="blurb "><i>Explore your surroundings to discover fun and food nearby !!</i></h3>
-      	  <div class="imgResp">
-      	  	<div id="mrTaco"></div>
-      	  </div>
-      </div>
+      <img src="css/images/taco002.png" id="mrTaco">
       <div>
           <div data-role="content" class="headerB hidden">
             <div class="ui-grid-a">
@@ -60,9 +55,9 @@
       </div>
 	  <div id="sliders" class="hidden">
 	      <form data-role="content" data-position="fixed" class="">
-	          <input id="slider-time" type="range" min="0" max="6" value="4" class="slider"># Hours</input>	          
-	          <input id="slider-cost" type="range" min="1" max="4" value="3" class="slider ">Cost:$$</input>
-	          <input id="slider-transport" type="range" min="0" max="3" value="2" class="slider">MODE</input>
+	          <input id="slider-time" type="range" data-mini="true" min="0" max="6" value="4" class="slider"># Hours</input>	          
+	          <input id="slider-cost" type="range" data-mini="true" min="1" max="4" value="3" class="slider ">Cost:$$</input>
+	          <input id="slider-transport" type="range" data-mini="true" min="0" max="3" value="2" class="slider">MODE</input>
 	      </form>
 	      <button id="path" class="ui-icon-back ui-btn-icon-left ui-corner-all">Get Trek!</button>
 	  </div>

@@ -140,13 +140,13 @@ $(document).ready(function () {
     $(".headerB").removeClass("hidden");
     $("#sliders").removeClass("hidden");
     $(".headerC").addClass("hidden");
-    $("#introInfo").addClass("hidden");
+    $("#mrTaco").addClass("hidden");
   });
   $("#fun").click(function(){
     $(".headerC").removeClass("hidden");
     $("#sliders").removeClass("hidden");
     $(".headerB").addClass("hidden");
-    $("#introInfo").addClass("hidden");
+    $("#mrTaco").addClass("hidden");
   });
   $("#foodLatin").click(function () {
     find(['food'], ['mexican'], 500, pos);

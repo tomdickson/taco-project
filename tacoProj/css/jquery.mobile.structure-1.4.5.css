@@ -206,7 +206,7 @@ div.ui-mobile-viewport {
 	border-width: 0;
 	overflow: visible;
 	overflow-x: hidden;
-	padding: 1em;
+	padding: .3em;
 }
 /* Corner styling for dialogs and popups */
 .ui-corner-all > .ui-header:first-child,
@@ -251,11 +251,12 @@ div.ui-mobile-viewport {
 	text-indent: -9999px;
 	white-space: nowrap !important;
 }
-.ui-mini {
+. {
 	font-size: 12.5px;
 }
 .ui-mini .ui-btn {
 	font-size: inherit;
+	width:85%;
 }
 /* Make buttons in toolbars default to mini and inline. */
 .ui-header .ui-btn,
@@ -2808,7 +2809,7 @@ div.ui-rangeslider label {
 	border-style: solid;
 }
 .ui-mini {
-	margin: .446em;
+	margin:none;
 }
 .ui-input-text input,
 .ui-input-search input,
