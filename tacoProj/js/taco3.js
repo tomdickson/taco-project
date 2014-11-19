@@ -137,16 +137,16 @@ google.maps.event.addDomListener(window, 'load', setLocation);
 
 $(document).ready(function () {
   $("#food").click(function(){
+  	$("#mrTaco").hide(300);
     $(".headerB").removeClass("hidden");
     $("#sliders").removeClass("hidden");
     $(".headerC").addClass("hidden");
-    $("#mrTaco").addClass("hidden");
   });
   $("#fun").click(function(){
+  	$("#mrTaco").hide(300);
     $(".headerC").removeClass("hidden");
     $("#sliders").removeClass("hidden");
     $(".headerB").addClass("hidden");
-    $("#mrTaco").addClass("hidden");
   });
   $("#foodLatin").click(function () {
     find(['food'], ['mexican'], 500, pos);
@@ -203,10 +203,10 @@ $(document).ready(function () {
   );
   $("#path").click(function () {
     calcRoute(markers, pos);
-    $("#sliders").addClass("hidden");
-    $(".headerC").addClass("hidden");
-    $(".headerB").addClass("hidden");
-    $(".headerA").addClass("hidden");  
+    $("#sliders").hide(200);
+    $(".headerC").hide(300);
+    $(".headerB").hide(300);
+    $(".headerA").hide(400);  
   });
   $("#goBack").click(function () {
     location.reload();  

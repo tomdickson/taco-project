@@ -17,9 +17,16 @@ body {
 #map-canvas {
 	height: 600px;
     width:100%;
+    z-index:-1!important;
 }
 
-.hidden {display:none;}
+.active {background-color:rgba(163, 228, 77, 0.5)}
+
+.ui-btn:after {background-color:rgba(163, 228, 77, 0.5)}
+
+.hidden {
+display:none;
+}
 
 #locate {
     width: 20%;
